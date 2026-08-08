@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crawl Xplorer - Documentation & Guide</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --code-bg: #f1f5f9;
+            --code-text: #0284c7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        p, ul {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        li strong {
+            color: var(--text-main);
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+            color: var(--code-text);
+            margin: 1rem 0;
+        }
+
+        code {
+            font-family: 'Consolas', monospace;
+            background-color: var(--code-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--code-text);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .feature-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Crawl Xplorer</h1>
+            <p>Modern Web Crawler & SEO Audit Tool with Graphical Interface</p>
+        </header>
+
+        <!-- INSTALLATION & DEPENDENCIES -->
+        <section>
+            <h2>⚙️ Installation Guide & Dependencies</h2>
+            <p>To run this script smoothly, ensure you have Python installed on your system. Most required modules are part of Python's standard library, but two external packages are strictly necessary.</p>
+            
+            <p><strong>1. Python Standard Libraries (Built-in):</strong></p>
+            <p>The script automatically relies on the following standard modules which require no manual installation:</p>
+            <ul>
+                <li><strong>urllib, time, json, ssl, sys, re, os, csv, math, threading</strong>: Core modules for network, parsing, threading, and file management.</li>
+                <li><strong>tkinter</strong>: Standard Python interface for graphical elements (ensure your Python installation includes Tcl/Tk, which is standard on Windows/macOS and available via package managers on Linux like <code>sudo apt install python3-tk</code>).</li>
+            </ul>
+
+            <p><strong>2. External Dependencies Installation:</strong></p>
+            <p>You need to install <strong>httpx</strong> (for HTTP requests) and <strong>beautifulsoup4</strong> (for HTML parsing). Run the following command in your terminal:</p>
+            <pre>pip install httpx beautifulsoup4</pre>
+
+            <p><strong>3. Running the Script:</strong></p>
+            <pre>python your_script_name.py</pre>
+        </section>
+
+        <!-- FEATURES -->
+        <section>
+            <h2>🚀 Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Multi-threaded Crawler</h3>
+                    <p>Asynchronous crawling logic running in a background thread to keep the user interface fully responsive.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>SEO Data Extraction</h3>
+                    <p>Collects page titles, meta descriptions, H1/H2/H3 tags, crawl depths, outbound and inbound link counts.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Interactive Dashboard</h3>
+                    <p>Built-in table viewer, visual charts for HTTP status distribution and page depth levels.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Auto-Save & Export</h3>
+                    <p>Automatically saves preferences directly into the source code and allows exporting audit data to CSV or JSON.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- USAGE -->
+        <section>
+            <h2>📖 How to Use</h2>
+            <ul>
+                <li><strong>Configuration Tab:</strong> Enter your target URL, set the maximum number of pages, apply optional filters, select a User-Agent, and choose your output file name. Click <strong style="color: var(--text-main);">Run Audit</strong> to start.</li>
+                <li><strong>Control Controls:</strong> Use the <strong>Pause</strong> or <strong>Stop</strong> buttons anytime during the crawl process to manage execution.</li>
+                <li><strong>Table Viewer Tab:</strong> Load any previously generated JSON audit file to inspect data or export results directly to a <strong>CSV</strong> file.</li>
+                <li><strong>Charts & Stats Tab:</strong> Analyze visual breakdowns of server response codes (HTTP status) and structural site depth.</li>
+                <li><strong>Raw JSON Viewer Tab:</strong> Open and view formatted, clean raw JSON structures of your audit reports.</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 HIGHUP - Web Crawler Audit. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
